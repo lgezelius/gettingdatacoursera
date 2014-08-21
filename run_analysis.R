@@ -70,16 +70,4 @@ t2 <- aggregate(t[, mean_and_std_columns], by=list(t$subject, t$activity), FUN=m
 t2 <- rename(t2, c("Group.1"="subject", "Group.2"="activity"))
 write.table(t2, file=file.path("data","aggregate.txt"), append=FALSE, row.names=FALSE)
 
-library(memisc)
-cb <- within(t2, {
-  description(subject) <- "Subject"
-  description(activity) <- "Activity"
-  foreach(x=mean_and_std_columns, {
-    description(x) <- "Mean of all measurements taken for subject and activity"
-  })
-})
-
-foreach(var=mean_and_std_columns,
-        print(var)
-)
 
