@@ -7,7 +7,7 @@ download.file(
   file.path("data","Dataset.zip"), 
   method="curl"
 )
-unzip(file.path("data","Dataset.zip"),exdir="data")
+unzip(file.path("data","Dataset.zip"), exdir="data")
 
 # function to convert a space delimited string of numbers to a numeric vector
 library(stringr)
@@ -26,7 +26,7 @@ activity_labels <- read.csv(
   file.path("data","UCI HAR Dataset","activity_labels.txt"),
   header=FALSE, 
   sep="",
-  col.names=c("level","label")
+  col.names=c("level", "label")
 )
 
 # read and combine the test and train data for activities
@@ -41,8 +41,11 @@ columns <- read.csv(
   file.path("data","UCI HAR Dataset","features.txt"),
   header=FALSE,
   sep="",
-  col.names=c("number","name")
+  col.names=c("number", "name")
 )
+library(stringr)
+# replace apparent "BodyBody" typo in columns$name vector with "Body"
+columns$name <- str_replace(string=columns$name, pattern="BodyBody", replacement="Body")
 
 # read and combine the test and train data for features
 X <- rbind(
@@ -51,7 +54,7 @@ X <- rbind(
 )
 
 # create a character vector of column names containing "mean()" or "std()"
-mean_and_std_columns <- as.character(columns$name[grepl("(mean\\(\\)|std\\(\\))",columns$name)])
+mean_and_std_columns <- grep("(mean\\(\\)|std\\(\\))", columns$name, value=TRUE)
 
 # create the first tidy data set:
 # convert the strings of space delimited feature data to vectors
@@ -69,5 +72,27 @@ library(plyr)
 t2 <- aggregate(t[, mean_and_std_columns], by=list(t$subject, t$activity), FUN=mean)
 t2 <- rename(t2, c("Group.1"="subject", "Group.2"="activity"))
 write.table(t2, file=file.path("data","aggregate.txt"), append=FALSE, row.names=FALSE)
+
+# generate code book fragment
+for(n in mean_and_std_columns[3:66]) {
+  cat(paste("Variable:", n, "  \n"))
+  cat(paste("Variable Type:", class(t2[, n]), "  \n"))
+  cat(paste("Allowable Values: -1 to 1  \n"))
+  en <- n
+  en <- sub("^t","time domain signals for",en)
+  en <- sub("^f","frequency domain signals for",en)
+  en <- sub("Body"," body",en)
+  en <- sub("Acc"," accelerometer",en)
+  en <- sub("Gyro"," gyroscope",en)
+  en <- sub("Jerk"," jerk",en)
+  en <- sub("Mag"," magnitude",en)
+  en <- sub("-mean\\(\\)"," means",en)
+  en <- sub("-std\\(\\)"," standard deviations",en)
+  en <- sub("-X"," on X axis",en)
+  en <- sub("-Y"," on Y axis",en)
+  en <- sub("-Z"," on Z axis",en)
+  cat(paste("Description: average of all",en,"for subject and activity  \n"))
+  cat("\n")
+}
 
 
