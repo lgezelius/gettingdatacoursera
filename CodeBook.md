@@ -3,17 +3,19 @@ CodeBook
 
 Data description for data/aggregate.txt. 
 
+The file is a space-delimited text file with a header created by [run_analysis.R](run_analysis.R). Character columns are surrounded by double quotes.
+
 Averages of mean and standard deviation measurements for 30 subjects and 6 activities each.
 
-Variable: subject
-Variable Type: int
-Allowable Values: 1-30
-Description: Test or Training Subject
+Variable: subject  
+Variable Type: int  
+Allowable Values: 1-30  
+Description: Test or Training Subject  
 
-Variable: activity
-Variable Type: char
-Allowable Values: "WALKING", "WALKING_UPSTAIRS", "WALKING_DOWNSTAIRS", "SITTING", "STANDING", "LAYING"
-Description: Nature of activity performed by subject while measurements were recorded
+Variable: activity  
+Variable Type: char  
+Allowable Values: "WALKING", "WALKING_UPSTAIRS", "WALKING_DOWNSTAIRS", "SITTING", "STANDING", "LAYING"  
+Description: Nature of activity performed by subject while measurements were recorded  
 
 The next 66 numeric variables are the average mean or standard deviation for a specific measurement for a subject and activity. The complete listing of fields is:
 
@@ -79,9 +81,9 @@ The next 66 numeric variables are the average mean or standard deviation for a s
 [60] fBodyGyro-std()-Z          
 [61] fBodyAccMag-mean()         
 [62] fBodyAccMag-std()          
-[63] fBodyBodyAccJerkMag-mean() 
+[63] fBodyBodyAccJerkMag-mean()  
 [64] fBodyBodyAccJerkMag-std()  
 [65] fBodyBodyGyroMag-mean()    
 [66] fBodyBodyGyroMag-std()     
-[67] fBodyBodyGyroJerkMag-mean()
-[68] fBodyBodyGyroJerkMag-std()
+[67] fBodyBodyGyroJerkMag-mean()  
+[68] fBodyBodyGyroJerkMag-std()  
