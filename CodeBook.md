@@ -17,6 +17,7 @@ Variable Type: char
 Allowable Values: "WALKING", "WALKING_UPSTAIRS", "WALKING_DOWNSTAIRS", "SITTING", "STANDING", "LAYING"  
 Description: Nature of activity performed by subject while measurements were recorded  
 
+
 Variable: tBodyAcc-mean()-Z   
 Variable Type: numeric   
 Allowable Values: -1 to 1  
@@ -40,32 +41,32 @@ Description: average of all time domain signals for body accelerometer standard 
 Variable: tGravityAcc-mean()-X   
 Variable Type: numeric   
 Allowable Values: -1 to 1  
-Description: average of all time domain signals forGravity accelerometer means on X axis for subject and activity  
+Description: average of all time domain signals for gravity accelerometer means on X axis for subject and activity  
 
 Variable: tGravityAcc-mean()-Y   
 Variable Type: numeric   
 Allowable Values: -1 to 1  
-Description: average of all time domain signals forGravity accelerometer means on Y axis for subject and activity  
+Description: average of all time domain signals for gravity accelerometer means on Y axis for subject and activity  
 
 Variable: tGravityAcc-mean()-Z   
 Variable Type: numeric   
 Allowable Values: -1 to 1  
-Description: average of all time domain signals forGravity accelerometer means on Z axis for subject and activity  
+Description: average of all time domain signals for gravity accelerometer means on Z axis for subject and activity  
 
 Variable: tGravityAcc-std()-X   
 Variable Type: numeric   
 Allowable Values: -1 to 1  
-Description: average of all time domain signals forGravity accelerometer standard deviations on X axis for subject and activity  
+Description: average of all time domain signals for gravity accelerometer standard deviations on X axis for subject and activity  
 
 Variable: tGravityAcc-std()-Y   
 Variable Type: numeric   
 Allowable Values: -1 to 1  
-Description: average of all time domain signals forGravity accelerometer standard deviations on Y axis for subject and activity  
+Description: average of all time domain signals for gravity accelerometer standard deviations on Y axis for subject and activity  
 
 Variable: tGravityAcc-std()-Z   
 Variable Type: numeric   
 Allowable Values: -1 to 1  
-Description: average of all time domain signals forGravity accelerometer standard deviations on Z axis for subject and activity  
+Description: average of all time domain signals for gravity accelerometer standard deviations on Z axis for subject and activity  
 
 Variable: tBodyAccJerk-mean()-X   
 Variable Type: numeric   
@@ -170,12 +171,12 @@ Description: average of all time domain signals for body accelerometer magnitude
 Variable: tGravityAccMag-mean()   
 Variable Type: numeric   
 Allowable Values: -1 to 1  
-Description: average of all time domain signals forGravity accelerometer magnitude means for subject and activity  
+Description: average of all time domain signals for gravity accelerometer magnitude means for subject and activity  
 
 Variable: tGravityAccMag-std()   
 Variable Type: numeric   
 Allowable Values: -1 to 1  
-Description: average of all time domain signals forGravity accelerometer magnitude standard deviations for subject and activity  
+Description: average of all time domain signals for gravity accelerometer magnitude standard deviations for subject and activity  
 
 Variable: tBodyAccJerkMag-mean()   
 Variable Type: numeric   

@@ -86,6 +86,7 @@ for(n in mean_and_std_columns[3:66]) {
   en <- sub("Gyro"," gyroscope",en)
   en <- sub("Jerk"," jerk",en)
   en <- sub("Mag"," magnitude",en)
+  en <- sub("Gravity"," gravity",en)
   en <- sub("-mean\\(\\)"," means",en)
   en <- sub("-std\\(\\)"," standard deviations",en)
   en <- sub("-X"," on X axis",en)
